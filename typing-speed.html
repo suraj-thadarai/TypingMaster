@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Typing Speed Test</title>
+</head>
+
+<body>
+    <h1>Typing Speed Test</h1>
+    <p id="quote">Type this sentence: "The quick brown fox jumps over the lazy dog."</p>
+    <input type="text" id="inputField">
+    <p id="result"></p>
+
+    <script>
+        const quote = "The quick brown fox jumps over the lazy dog.";
+        const quoteElement = document.getElementById("quote");
+        const inputField = document.getElementById("inputField");
+        const resultElement = document.getElementById("result");
+
+        inputField.addEventListener("input", () => {
+            const typedText = inputField.value;
+            console.log('typedText values', typedText)
+            if (quote.startsWith(typedText)) {
+                if (typedText === quote) {
+                    resultElement.textContent = "Congratulations! You typed it correctly!";
+                } else {
+                    resultElement.textContent = "Keep going...";
+                }
+            } else {
+                resultElement.textContent = "Oops! Try again.";
+            }
+        });
+
+    </script>
+</body>
+
+</html>
